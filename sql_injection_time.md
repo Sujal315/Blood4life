@@ -24,7 +24,7 @@
 #### Root Cause
 The application directly incorporates unsanitized user input (emailid parameter) into SQL queries without employing parameterized statements or input validation. This improper handling enables attackers to craft time-based SQL injection payloads, leading to unauthorized access or data extraction.
 
-![image](https://github.com/user-attachments/assets/0e7d652f-1e2c-4b06-866e-95cfb685c93f)
+![452726514-0e7d652f-1e2c-4b06-866e-95cfb685c93f](https://github.com/user-attachments/assets/03489186-8456-4148-b285-a70bede55565)
 
 
 ### Impact:
@@ -49,7 +49,7 @@ The application directly incorporates unsanitized user input (emailid parameter)
     Payload: email=' AND (SELECT 5803 FROM (SELECT(SLEEP(5)))LOuf) AND 'Hdtb'='Hdtb&password=Test@123&login=
 ```
 
-![image](https://github.com/user-attachments/assets/02cae346-8e05-4eca-a8bd-fbc5d8b63a91)
+![452726521-02cae346-8e05-4eca-a8bd-fbc5d8b63a91](https://github.com/user-attachments/assets/a7a1d5c4-4b40-4cc1-9ae1-c81e4795be88)
 
 
 ### Proof of Concept:
@@ -60,21 +60,21 @@ email=' AND (SELECT 5803 FROM (SELECT(SLEEP(5)))LOuf) AND 'Hdtb'='Hdtb&password=
 ```
 ##### email is injectable!
 
-![image](https://github.com/user-attachments/assets/32621e1e-fd67-44ea-b4b1-14cbbda465df)
+![3](https://github.com/user-attachments/assets/0218c9d4-f130-401f-b0dd-bbafdd721305)
 
 
 ##### Databases information extracted
 
-![image](https://github.com/user-attachments/assets/95bca1a6-375b-49c2-be80-a4b9fb159daf)
+![4](https://github.com/user-attachments/assets/2b0708a6-d214-473c-8afa-acce953e58f2)
 
 
 ##### Tables information extracted
 
-![image](https://github.com/user-attachments/assets/1a85e8ec-791b-4a11-bb1e-386038969be6)
+![5](https://github.com/user-attachments/assets/b1d62f66-6dce-4e83-a09f-602a49fbed89)
 
 ##### Table=tbladmin data dumped!
 
-![image](https://github.com/user-attachments/assets/3ed014ab-1ae3-4d77-8a82-466464b6381c)
+![6](https://github.com/user-attachments/assets/e9e87543-f56d-4cbe-bb2d-05dc46d7a46b)
 
 ### Suggested Remediation:
 ---
@@ -106,7 +106,3 @@ Mitigation Timeline:
 - Long-term: Consider migrating to an ORM framework
 
 This vulnerability requires immediate attention due to its potential for significant data breach and system compromise.
-
-
-
-
